@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "./theme.css";
 
+
+
 .contenedor__h1 {
   font-family: var(--heading-h1-font-family);
   font-size: var(--heading-h1-font-size);
@@ -43,8 +45,6 @@
   margin: auto;
 }
 
-.contenedor__foto img {
-  width: 100%;
-  /* altura fija para todas las imágenes */
-  height: 300px; 
+.text_red {
+  color: red;
 }
