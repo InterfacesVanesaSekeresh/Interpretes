@@ -10,8 +10,8 @@ function App() {
     <>
     <Header />
     <Routes>
-      ruta element Contenedor 
-      rutas path element home
+      <Route path='/contenedor'ruta element Contenedor 
+      rutas path element home....
     </Routes>
     lo mismo la q no existe
 
