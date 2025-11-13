@@ -1,12 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-import App from './App.jsx'
-import './assets/styles/index.css'
+import App from "./App.jsx";
+import "./assets/styles/index.css";
+import { BrowserRouter } from "react-router-dom";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <>
+createRoot(document.getElementById("root")).render(
+  <>
+    <StrictMode>
       {/* Enlace de salto accesible */}
       <a
         href="#main-content"
@@ -14,9 +15,10 @@ createRoot(document.getElementById('root')).render(
       >
         Saltar al contenido principal
       </a>
-      
-    
-      <App />
-    </>
-  </StrictMode>,
-)
+
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </StrictMode>
+  </>
+);
