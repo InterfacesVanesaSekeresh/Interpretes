@@ -23,7 +23,7 @@ function Tarjeta({ foto, nombre, esNota10, clasificacion, children }) {
       </header>
 
       {/* Mostrar clasificación si existe */}
-      {clasificacion && <p>Clasificación: {clasificacion}</p>}
+      {clasificacion && <p>{clasificacion}</p>}
 
       {/* Mostrar children si existe (ej. recaudación o biografía) */}
       {children && <p>{children}</p>}
