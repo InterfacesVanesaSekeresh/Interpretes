@@ -17,16 +17,14 @@ function App() {
           <Route path="pelicula" element={<Peliculas />} />
           <Route path="interprete" element={<Interpretes />} />
           <Route path="admin" element={<Admin />} />
-          <Route path="*" titulo="Contenido no encontrado" element={<p>La página que buscas no existe</p>} />
-
-          {/*<Route
+          {/*<Route path="peliculas/:id" element={<DetallePelicula />} />
+          <Route path="interpretes/:id" element={<DetalleInterprete />} />*/}
+          
+          <Route
             path="*"
-            element={
-              <ContenidoPrincipal titulo="Contenido no encontrado">
-                <p>La página que buscas no existe</p>
-              </ContenidoPrincipal>
-            }
-          /> */}
+            titulo="Contenido no encontrado"
+            element={<p>La página que buscas no existe</p>}
+          />
         </Route>
       </Routes>
     </>
