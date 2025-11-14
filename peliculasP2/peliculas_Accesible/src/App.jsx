@@ -6,7 +6,6 @@ import Admin from "./pages/Admin.jsx";
 import { Routes, Route } from "react-router-dom";
 import ContenidoPrincipal from "./pages/ContenidoPrincipal.jsx";
 
-
 function App() {
   return (
     <>
@@ -18,6 +17,16 @@ function App() {
           <Route path="pelicula" element={<Peliculas />} />
           <Route path="interprete" element={<Interpretes />} />
           <Route path="admin" element={<Admin />} />
+          <Route path="*" titulo="Contenido no encontrado" element={<p>La página que buscas no existe</p>} />
+
+          {/*<Route
+            path="*"
+            element={
+              <ContenidoPrincipal titulo="Contenido no encontrado">
+                <p>La página que buscas no existe</p>
+              </ContenidoPrincipal>
+            }
+          /> */}
         </Route>
       </Routes>
     </>
