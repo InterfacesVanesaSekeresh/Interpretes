@@ -13,6 +13,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<ContenidoPrincipal />}>
+          <Route index element={<Home />} />
           <Route path="inicio" element={<Home />} />
           <Route path="pelicula" element={<Peliculas />} />
           <Route path="interprete" element={<Interpretes />} />

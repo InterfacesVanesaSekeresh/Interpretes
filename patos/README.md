@@ -47,3 +47,8 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ![foto donde se usó Anima](image-7.png)
 
+
+---
+## Debe aparecer en la consola del navegador console.log(información)
+
+![Console.log](image-8.png)

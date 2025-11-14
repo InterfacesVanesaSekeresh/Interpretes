@@ -1,3 +1,10 @@
+"use strict";
+
+/**
+ *Organiza la estructura principal 
+ *Encabezado = titilo y subtitulo
+ *Lista de productos = tarjetas de patos (items)
+ */
 function GlobalContent({ children }) {
   // h2 y h3 = (pilla el 1 y el dos)
   const encabezados = children.slice(0, 2);
@@ -16,16 +23,16 @@ function GlobalContent({ children }) {
         {/* Bloque contenedor */}
         <section className="contenedor__contenido w-full max-w-7xl mx-auto px-4">
           {/* Elemento: encabezados */}
-          <h1 className="contenedor__encabezados text-start space-y-2">
+          <section className="contenedor__encabezados text-start space-y-2">
             {encabezados}
-          </h1>
+          </section>
 
           {/* Elemento: lista de productos */}
           <section
             className="contenedor__grid 
-              grid grid-cols-1 {/* Móvil */}
-              sm:grid-cols-2 {/* Columnas del móvil */}
-              lg:grid-cols-4 {/* Pantallas grandes */}
+              grid grid-cols-1                  {/* Móvil */}
+              sm:grid-cols-2                    {/* Columnas del móvil */}
+              lg:grid-cols-4                    {/* Pantallas grandes */}
               gap-4 w-full mt-8"
           >
             {items}

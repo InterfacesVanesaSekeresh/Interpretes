@@ -1,3 +1,8 @@
+"use strict";
+/**
+ * TarjetaPato: Componente que representa una tarjeta individual de pato 
+ *  
+ */
 function TarjetaPato(props) {
   const { nombre, foto, descripcion, categoria, precio } = props;
   return (
@@ -20,7 +25,7 @@ function TarjetaPato(props) {
         </figure>
 
         <section>
-          {/* Bloque informativo del intérprete */}
+          {/* Bloque informativo del pato */}
           <article>
             <h3 className="font-heading-h5 font-(--heading-h5-font-weight) text-color-black-1 text-[length:var(--heading-h5-font-size)] tracking-[var(--heading-h5-letter-spacing)] leading-[var(--heading-h5-line-height)] whitespace-nowrap [font-style:var(--heading-h5-font-style)]">
               <strong>{nombre}</strong>

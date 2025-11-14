@@ -2,12 +2,36 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <nav>
-      <Link to="/inicio">Inicio</Link>
-      <Link to="/pelicula">Películas</Link>
-      <Link to="/interprete">Intérpretes</Link>
-      <Link to="/admin">Admin</Link>
+    <nav className="flex space-x-4">
+      <Link
+        to="/inicio"
+        className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white"
+      >
+        Inicio
+      </Link>
+
+      <Link
+        to="/pelicula"
+        className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white"
+      >
+        Películas
+      </Link>
+
+      <Link
+        to="/interprete"
+        className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white"
+      >
+        Intérpretes
+      </Link>
+
+      <Link
+        to="/admin"
+        className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white"
+      >
+        Admin
+      </Link>
     </nav>
   );
 }
+
 export default Nav;
