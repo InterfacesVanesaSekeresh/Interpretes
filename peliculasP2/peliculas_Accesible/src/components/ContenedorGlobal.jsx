@@ -1,4 +1,4 @@
-function Contenedor({ titulo, children }) {
+function ContenedorGlobal({ titulo, children }) {
   return (
 
       <section
@@ -19,4 +19,4 @@ function Contenedor({ titulo, children }) {
   );
 }
 
-export default Contenedor;
+export default ContenedorGlobal;

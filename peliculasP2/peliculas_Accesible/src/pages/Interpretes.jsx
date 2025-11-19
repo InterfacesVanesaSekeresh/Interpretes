@@ -1,29 +1,38 @@
+import { Link } from "react-router-dom";
 import Tarjeta from "../components/Tarjeta.jsx";
-import Contenedor from "../components/Contenedor.jsx";
-import  peliculas from "../data/peliculas";
+import ContenedorGlobal from "../components/ContenedorGlobal.jsx";
+import peliculas from "../data/peliculas";
 
-function Interpretes()  {
-    return (
-        <Contenedor titulo="Intérpretes de películas destacadas">
-    
-        <p className="body-text">Listado de intérpretes disponibles:</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
-          {peliculas
-            .map((pelicula) =>
-              pelicula.actores.map((actor, index) => (
+function Interpretes() {
+  // Variable para llevar la cuenta del índice global de actores
+  // Ya que al estar dentor del array de peliculas, el index se reinicia en cada pelicula
+  let globalIndex = 0;
+
+  return (
+    <ContenedorGlobal titulo="Intérpretes de películas destacadas">
+      <p className="body-text">Listado de intérpretes disponibles:</p>
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
+        {peliculas.map((pelicula) =>
+          pelicula.actores.map((actor) => {
+            // Asignar el índice global actual y luego incrementarlo
+            const index = globalIndex++;
+            return (
+              // Enlazar a la página de detalle del intérprete usando el índice global
+              <Link key={index} to={`/interprete/${index}`}>
                 <Tarjeta
-                  key={index}
                   nombre={actor.nombre}
                   foto={actor.imagen}
                   esNota10={pelicula.nota === 10}
                 >
                   {actor.biografia}
                 </Tarjeta>
-              ))
-            )}
-        </div>
-      </Contenedor>
-    );
+              </Link>
+            );
+          })
+        )}
+      </section>
+    </ContenedorGlobal>
+  );
 }
 
 export default Interpretes;

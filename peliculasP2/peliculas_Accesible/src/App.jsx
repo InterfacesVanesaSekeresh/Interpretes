@@ -5,6 +5,8 @@ import Peliculas from "./pages/Peliculas.jsx";
 import Admin from "./pages/Admin.jsx";
 import { Routes, Route } from "react-router-dom";
 import ContenidoPrincipal from "./pages/ContenidoPrincipal.jsx";
+import DetalleInterprete from "./pages/DetalleInterprete.jsx";
+import DetallePelicula from "./pages/DetallePelicula.jsx";
 
 function App() {
   return (
@@ -17,9 +19,8 @@ function App() {
           <Route path="pelicula" element={<Peliculas />} />
           <Route path="interprete" element={<Interpretes />} />
           <Route path="admin" element={<Admin />} />
-          {/*<Route path="peliculas/:id" element={<DetallePelicula />} />
-          <Route path="interpretes/:id" element={<DetalleInterprete />} />*/}
-          
+          <Route path="pelicula/:id" element={<DetallePelicula />} />
+          <Route path="interprete/:id" element={<DetalleInterprete />} />
           <Route
             path="*"
             titulo="Contenido no encontrado"
