@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import peliculas from "../data/peliculas";
 import Tarjeta from "../components/Tarjeta.jsx";
 
+//Parecido a DetalleInterprete.jsx pero de películas
 function DetallePelicula() {
   const { id } = useParams(); // Obtener el ID de los parámetros de la URL
   const navigate = useNavigate(); // Hook para navegación programática
@@ -45,7 +46,7 @@ function DetallePelicula() {
           <h2 className="text-2xl font-semibold mb-2">Actores Principales</h2>
           <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
             {pelicula.actores.map((actor, index) => (
-              <Tarjeta 
+              <Tarjeta
               key={index} 
               nombre={actor.nombre} 
               foto={actor.imagen}

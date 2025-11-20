@@ -1,3 +1,4 @@
+//Se reutiliza para películas e interpretes (es el "diseño" de las tarjetas)
 function Tarjeta({ foto, nombre, esNota10, clasificacion, children }) {
   return (
     <article

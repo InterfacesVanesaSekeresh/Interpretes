@@ -1,3 +1,5 @@
+//La parte que contiene el título principal y envuelve todo
+//Está en Interpretes.jsx y Peliculas.jsx
 function ContenedorGlobal({ titulo, children }) {
   return (
 

@@ -8,6 +8,7 @@ import ContenidoPrincipal from "./pages/ContenidoPrincipal.jsx";
 import DetalleInterprete from "./pages/DetalleInterprete.jsx";
 import DetallePelicula from "./pages/DetallePelicula.jsx";
 
+//Componente principal que maneja las rutas de la aplicación
 function App() {
   return (
     <>

@@ -1,3 +1,5 @@
+//Es lo que va cambiando en la pantalla según la ruta, por ejemplo
+//Película, Admin...
 import { Outlet } from "react-router-dom";
 function ContenidoPrincipal() {
     return (

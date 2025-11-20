@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import peliculas from "../data/peliculas";
 
+//Al pulsar el interprete, se abre y aparecen sus datos
 function DetalleInterprete() {
   const { id } = useParams();
   const navigate = useNavigate(); // Hook para navegación programática
@@ -15,6 +16,7 @@ function DetalleInterprete() {
   return (
     <>
       <article>
+        {/*Para que este a la misma altura el botón y el nombre del actor*/}
         <section className="flex items-center justify-between mb-4">
           <h1 className="text-3xl font-bold mb-4">{actor.nombre}</h1>
           <button
@@ -24,7 +26,7 @@ function DetalleInterprete() {
             Volver
           </button>
         </section>
-
+        {/*Los demás datos del actor*/}
         <section>
           <img
             className="mx-auto"

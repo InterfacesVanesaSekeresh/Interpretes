@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+//La parte del header ( Está inicio, películas, intérpretes y admin)
 function Nav() {
   // Estado del menú: abierto o cerrado
   const [open, setOpen] = useState(false);

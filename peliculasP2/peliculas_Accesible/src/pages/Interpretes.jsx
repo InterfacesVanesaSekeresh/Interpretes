@@ -3,6 +3,7 @@ import Tarjeta from "../components/Tarjeta.jsx";
 import ContenedorGlobal from "../components/ContenedorGlobal.jsx";
 import peliculas from "../data/peliculas";
 
+//La "qurry" de intérpretes
 function Interpretes() {
   // Variable para llevar la cuenta del índice global de actores
   // Ya que al estar dentor del array de peliculas, el index se reinicia en cada pelicula
