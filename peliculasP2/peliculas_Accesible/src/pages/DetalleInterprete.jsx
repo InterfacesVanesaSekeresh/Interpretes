@@ -3,12 +3,13 @@ import peliculas from "../data/peliculas";
 
 //Al pulsar el interprete, se abre y aparecen sus datos
 function DetalleInterprete() {
-  const { id } = useParams();
+  //Paso idpelicula (enrutamiento lo cambio para que cuadre)
+  const { idpelicula, id } = useParams();
   const navigate = useNavigate(); // Hook para navegación programática
-  //Crear un array con todos los actores de todas las peliculas
-  const actores = peliculas.flatMap((pelicula) => pelicula.actores);
+
+  const pelicula = peliculas.find((p) => p.id === parseInt(idpelicula));
   //De string a entero
-  const actor = actores[parseInt(id)];
+  const actor = pelicula.actores[parseInt(id)];
 
   if (!actor) {
     return <p>Interprete no encontrado</p>;
@@ -20,7 +21,7 @@ function DetalleInterprete() {
         <section className="flex items-center justify-between mb-4">
           <h1 className="text-3xl font-bold mb-4">{actor.nombre}</h1>
           <button
-            onClick={() => navigate("/interprete")} // Navegar a la página anterior
+            onClick={() => navigate(-1)} // Navegar a la página anterior
             className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
           >
             Volver

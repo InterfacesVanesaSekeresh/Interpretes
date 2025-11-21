@@ -19,7 +19,7 @@ function Interpretes() {
             const index = globalIndex++;
             return (
               // Enlazar a la página de detalle del intérprete usando el índice global
-              <Link key={index} to={`/interprete/${index}`}>
+              <Link key={`${pelicula.id}-${index}`} to={`/interprete/${pelicula.id}/${index}`}>
                 <Tarjeta
                   nombre={actor.nombre}
                   foto={actor.imagen}

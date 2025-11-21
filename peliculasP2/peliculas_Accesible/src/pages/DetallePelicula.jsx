@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import peliculas from "../data/peliculas";
 import Tarjeta from "../components/Tarjeta.jsx";
 
@@ -19,20 +19,19 @@ function DetallePelicula() {
         <section className="flex items-center justify-between mb-4">
           <h1 className="text-3xl font-bold">{pelicula.nombre}</h1>
           <button
-            onClick={() => navigate("/pelicula")}
+            onClick={() => navigate(-1)} // Navegar a la página anterior
             className="px-4 py-2 bg-blue-500 text-white rounded"
           >
             Volver
           </button>
-
         </section>
-        
+
         {/*Centrar la imagen (mx-auto) y el texto */}
         <section className="text-center">
           <img
             src={pelicula.cartelera}
             alt={`Cartelera de ${pelicula.nombre}`}
-            className="mx-auto" 
+            className="mx-auto"
           />
           <p className="mt-4">{pelicula.clasificacion}</p>
           <p className="mt-2">
@@ -46,15 +45,14 @@ function DetallePelicula() {
           <h2 className="text-2xl font-semibold mb-2">Actores Principales</h2>
           <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
             {pelicula.actores.map((actor, index) => (
-             
-              <Tarjeta
-              key={index} 
-              nombre={actor.nombre} 
-              foto={actor.imagen}
+              <Link
+                key={`${pelicula.id}-${index}`}
+                to={`/interprete/${pelicula.id}/${index}`}
               >
-                {actor.biografia}
-              </Tarjeta>
-             
+                <Tarjeta key={index} nombre={actor.nombre} foto={actor.imagen}>
+                  {actor.biografia}
+                </Tarjeta>
+              </Link>
             ))}
           </section>
         </section>
