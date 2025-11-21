@@ -27,7 +27,7 @@ function Nav() {
       )}
       {/* Menú controlado por el estado, hay que pasarle el mismo id que se usa en
           //aria-controls="menu"
-          //md:flex: en pantallas medianas y grandes siempre se ve el menú
+          //md:flex: en pantallas grandes no se ve el menú hambuerguesa
       */}
       <nav id="menu" className={`${open ? "block" : "hidden"} md:flex`}>
         <NavLink
