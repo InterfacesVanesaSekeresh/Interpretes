@@ -1,68 +1,112 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-//La parte del header ( Está inicio, películas, intérpretes y admin)
 function Nav() {
-  // Estado del menú: abierto o cerrado
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
-    <>
-      {/* Botón hamburguesa. Una vez abierto no aparece el menu 
-      //aria-label para accesibilidad
-      //aria-expanded indica si el menú está abierto o cerrado
-      //aria-controls indica el id del elemento que controla (el menú)
-      //className="md:hidden" para que solo se vea en pantallas pequeñas
-      */}
-      {!open && (
-        <button
-          className="md:hidden"
-          onClick={() => setOpen(true)}
-          aria-label="Abrir menú"
-          aria-expanded={open}
-          aria-controls="menu"
+    <nav className="relative" aria-label="Menú principal">
+      {/* Hamburguesa solo en móvil */}
+      <button
+        onClick={toggleMenu}
+        className="text-2xl text-(--color-primary) px-2 py-1 border rounded md:hidden"
+        aria-controls="menuMovil"
+        aria-expanded={isOpen}
+        aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+      >
+        {isOpen ? "x" : "☰"}
+      </button>
+
+      {/* Menú móvil bajo header*/}
+      {isOpen && (
+        <ul
+          id="menuMovil"
+          className="absolute top-full left-1/20 -translate-x-1/2 w-full bg-black text-white z-50 flex flex-col items-center gap-6 px-15 py-10 rounded-lg shadow-xl md:hidden"
         >
-          ☰
-        </button>
+          <li role="none">
+            <NavLink
+              to="/inicio"
+              className="block px-3 py-2 rounded-md font-bold text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-write)]"
+              role="menuitem"
+            >
+              Inicio
+            </NavLink>
+          </li>
+          <li role="none">
+            <NavLink
+              to="/pelicula"
+              className="block px-3 py-2 rounded-md font-bold text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-write)]"
+              onClick={() => setIsOpen(false)}
+              role="menuitem"
+            >
+              Películas
+            </NavLink>
+          </li>
+          <li role="none">
+            <NavLink
+              to="/interprete"
+              className="block px-3 py-2 rounded-md font-bold text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-write)]"
+              onClick={() => setIsOpen(false)}
+              role="menuitem"
+            >
+              Intérpretes
+            </NavLink>
+          </li>
+          <li role="none">
+            <NavLink
+              to="/admin"
+              className="block px-3 py-2 rounded-md font-bold text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-write)]"
+              onClick={() => setIsOpen(false)}
+              role="menuitem"
+            >
+              Admin
+            </NavLink>
+          </li>
+        </ul>
       )}
-      {/* Menú controlado por el estado, hay que pasarle el mismo id que se usa en
-          //aria-controls="menu"
-          //md:flex: en pantallas grandes no se ve el menú hambuerguesa
-      */}
-      <nav id="menu" className={`${open ? "block" : "hidden"} md:flex`}>
-        <NavLink
-          to="/"
-          className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white"
-          onClick={() => setOpen(false)}
-        >
-          Inicio
-        </NavLink>
 
-        <NavLink
-          to="/pelicula"
-          className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white"
-          onClick={() => setOpen(false)}
-        >
-          Películas
-        </NavLink>
-
-        <NavLink
-          to="/interprete"
-          className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white"
-          onClick={() => setOpen(false)}
-        >
-          Intérpretes
-        </NavLink>
-
-        <NavLink
-          to="/admin"
-          className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white"
-          onClick={() => setOpen(false)}
-        >
-          Admin
-        </NavLink>
-      </nav>
-    </>
+      {/* Menú escritorio */}
+      <ul className="hidden md:flex gap-4" role="menubar">
+        <li role="none">
+          <NavLink
+            to="/inicio"
+            className="px-3 py-2 rounded-md font-bold text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-write)]"
+            role="menuitem"
+          >
+            Inicio
+          </NavLink>
+        </li>
+        <li role="none">
+          <NavLink
+            to="/pelicula"
+            className="px-3 py-2 rounded-md font-bold text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-write)]"
+            role="menuitem"
+          >
+            Películas
+          </NavLink>
+        </li>
+        <li role="none">
+          <NavLink
+            to="/interprete"
+            className="px-3 py-2 rounded-md font-bold text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-write)]"
+            role="menuitem"
+          >
+            Intérpretes
+          </NavLink>
+        </li>
+        <li role="none">
+          <NavLink
+            to="/admin"
+            className="px-3 py-2 rounded-md font-bold text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-write)]"
+            role="menuitem"
+          >
+            Admin
+          </NavLink>
+        </li>
+      </ul>
+    </nav>
   );
 }
 

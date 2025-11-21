@@ -46,6 +46,7 @@ function DetallePelicula() {
           <h2 className="text-2xl font-semibold mb-2">Actores Principales</h2>
           <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8">
             {pelicula.actores.map((actor, index) => (
+             
               <Tarjeta
               key={index} 
               nombre={actor.nombre} 
@@ -53,6 +54,7 @@ function DetallePelicula() {
               >
                 {actor.biografia}
               </Tarjeta>
+             
             ))}
           </section>
         </section>
